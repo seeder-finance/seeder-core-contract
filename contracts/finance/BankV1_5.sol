@@ -69,7 +69,7 @@ contract BankV1_5 is Loanable {
         return _getTotalNativeBalance();
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     // @dev now only return value that declared without any update
     function getTotalBorrowingNativeToken() external view returns (uint256) {
         return _totalBorrowNativeOrigin;
@@ -82,7 +82,7 @@ contract BankV1_5 is Loanable {
         return _getTotalTokenBalance(depositPair);
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     // @dev now only return value that declared without any update
     function getTotalBorrow(address originToken) external view returns (uint256) {
         DepositPair memory depositPair = _tokenDepositPairs[originToken];
@@ -221,7 +221,7 @@ contract BankV1_5 is Loanable {
         emit Withdraw(msg.sender, address(depositPair.ibToken), address(depositPair.originToken), ibTokenAmount, originalTokenAmount);
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     function borrowNative(address payable targetAccount, uint256 amount) external onlyLoanIssuer {
     
         // require(targetAccount != address(0), "Cannot borrow to zero address");
@@ -236,7 +236,7 @@ contract BankV1_5 is Loanable {
         // emit BorrowNative(msg.sender, targetAccount, amount);
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     function borrow(address borrowOriginToken, address targetAccount, uint256 amount) external onlyLoanIssuer {
         // require(targetAccount != address(0), "Cannot borrow to zero address");
         // require(amount >= 1E15, "The amount must be more than or equal 1E15");
@@ -253,7 +253,7 @@ contract BankV1_5 is Loanable {
         // emit Borrow(msg.sender, targetAccount, borrowOriginToken, amount);
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     function payBackNative(uint256 payBackBalance, uint256 fee) external payable {
         // uint256 totalBalance = msg.value;
         // require(totalBalance == payBackBalance.add(fee), "Total balance not match with parameters");
@@ -266,7 +266,7 @@ contract BankV1_5 is Loanable {
         // emit PaybackNative(msg.sender, payBackBalance);
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     function payBack(address originToken, uint256 payBackBalance, uint256 fee) external {
         // DepositPair storage depositPair = _tokenDepositPairs[originToken];
         // require(address(depositPair.originToken) != address(0), "Not support token");
@@ -282,7 +282,7 @@ contract BankV1_5 is Loanable {
         // emit Payback(msg.sender, originToken, payBackBalance);
     }
 
-    // @notice This function will be applicable when our platform implement loan feature and of course it's come when audited
+    // @notice This feature is not applicable in this version
     // @dev now only return value that declared without any update
     function getTotalBorrowNativeOrigin() external view returns (uint256) {
         return _totalBorrowNativeOrigin;
