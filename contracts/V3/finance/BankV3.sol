@@ -326,6 +326,7 @@ contract BankV3 is LoanableV3 {
         depositPair.ibToken = IERC20(ibTokenAddress);
         
         _tokenDepositPairs[originTokenAddress] = depositPair;
+        ibTokenDepositPairs[ibTokenAddress] = depositPair;
         _supportOriginTokens.push(originTokenAddress);
     }
 
